@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        .parent {
+            width: 400px;
+            height: 4000px;
+            /* background-color: aqua; */
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+        .child {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+
+        }
+
+        .static {
+
+            background-color: red;
+            position: static;
+            z-index: 1;
+        }
+
+        .relative {
+
+            background-color: black;
+            position: relative;
+
+        }
+
+        .absolute {
+
+            background-color: green;
+            position: absolute;
+
+        }
+
+        .fixed {
+            background-color: blue;
+            position: fixed;
+            top: 20px
+        }
+
+        .sticky {
+            background-color: gold;
+            position: sticky;
+            top: 10px
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="parent">
+        <div class=" child static ">1</div>
+        <div class=" child relative">2</div>
+        <div class=" child absolute">3</div>
+        <div class=" child fixed">4</div>
+        <div class=" child sticky">5</div>
+
+    </div>
+
+
+
+</body>
+
+</html>
