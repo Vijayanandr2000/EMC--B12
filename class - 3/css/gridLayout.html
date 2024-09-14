@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header empty"
+                "sm aside"
+                "section aside"
+                "footer footer"
+            ;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 2fr 3fr 1fr;
+            grid-gap: 10px;
+            height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: lightcoral
+        }
+
+        .empty {
+            grid-area: empty;
+            background-color: white
+        }
+
+        .flex-container {
+            grid-area: sm;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .small-box {
+            background-color: lightcoral;
+            width: 120px;
+            height: 200px;
+
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: lightcoral
+        }
+
+        section {
+            grid-area: section;
+            background-color: lightcoral
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: lightcoral
+        }
+
+        @media screen and (max-width: 400px) {
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    "header"
+                    "sm"
+                    "section"
+                    "footer"
+                ;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 2fr 3fr 1fr;
+                grid-gap: 10px;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header>Header</header>
+        <header class="empty"></header>
+        <div class="flex-container">
+            <div class="small-box">SM-1</div>
+            <div class="small-box">SM-2</div>
+            <div class="small-box">SM-3</div>
+        </div>
+        <aside>Sidebar</aside>
+        <section>Main Content</section>
+        <footer>Footer</footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let name = "vijay"
+        // let age = 25
+        // let height = 180.5
+        // let mark = true
+        // let data = null
+        // let url;
+
+        // let ar = [12, 4, 3]
+        // let obj = {
+        //     name: "vijay",
+        // }
+
+        // console.log(typeof name)
+        // console.log(typeof age)
+        // console.log(typeof height)
+        // console.log(typeof mark)
+        // console.log(data)
+        // console.log(typeof url)
+        // console.log(typeof ar)
+        // console.log(typeof obj)
+
+
+        // let time = "sunday";
+
+        // if (time >= 6 && time < 12) {
+        //     console.log("BF");
+
+        // } else {
+        //     if (time >= 12 && time <= 16) {
+        //         console.log("LUNCHH");
+        //     } else {
+        //         console.log("dinner");
+        //     }
+        // }
+
+        // if (time >= 6 && time < 12) {
+        //     console.log("BF");
+        // } else if (time >= 12 && time <= 16) {
+        //     console.log("LUNCHH");
+        // } else {
+        //     console.log("dinner");
+        // }
+
+        // switch (time) {
+        //     case "sunday":
+        //         console.log("Weekend");
+
+        //     case "sunday":
+        //         console.log("Weekend");
+        //         break;
+        //     case "sunday":
+        //         console.log("Weekend");
+        //         break;
+        //     case "sunday":
+        //         console.log("Weekend");
+        //         break;
+        //     default:
+        //         console.log("Weekday");
+        //         break;
+        // }
+
+        // for (let i = 0; i < 5; i++) {
+        //     console.log(i);
+
+        // }
+        //print 1 - 100 all odd number
+
+        // for (let i = 1; i < 100; i = i + 2) {
+        //     console.log(i);
+
+        // }
+
+
+        //dive 100 untill it become 1
+
+        // let a = 1000000;
+        // let count = 0;
+
+        // while (a >= 1) {
+        //     a = Math.floor(a / 2)
+        //     count++
+        // }
+
+        // console.log(count);
+
+        // let a = [1, 2, 3, 4, 5]
+
+        // let sum = 1
+
+        // for (let i = 0; i < a.length; i++) {
+        //     sum *= a[i]
+        // }
+
+        // console.log(sum);
+        // let obj = {
+        //     name: 'vijay'
+        // }
+
+        // console.log(console);
+        // console.log(obj['name']);
+
+        let findNum = Math.floor(Math.random() * 11);
+        console.log(findNum);
+
+
+
+        let userInp;
+        let count = 0;
+
+        while (userInp !== findNum) {
+            userInp = parseInt(prompt('Guess the number from 0 - 10: '))
+            count++
+
+            if (userInp > findNum) {
+                console.log("Too High Number!!!");
+
+            } else if (userInp < findNum) {
+                console.log("Too Low Number!!!");
+            } else {
+                console.log("Correct!!!. Attempt: ", count);
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
