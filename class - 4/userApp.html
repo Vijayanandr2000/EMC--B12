@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info APP</title>
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- FORM SECTION -->
+    <section id="form">
+        <h2>User Form</h2>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob">
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail">
+
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value=""></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- TABLE SECTION -->
+    <section id="table">
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>DOB</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Add rows -->
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+
+        const form = document.getElementById("userForm")
+        const table = document.getElementById("userTable").getElementsByTagName("tbody")[0]
+
+        let editIdx = null;
+
+        const deleteRow = (idx) => {
+            table.deleteRow(idx)
+        }
+
+        const editRow = (idx) => {
+            const selectedCell = table.rows[idx]
+
+            document.getElementById("name").value = selectedCell.cells[0].textContent
+            document.getElementById("age").value = selectedCell.cells[1].textContent
+            document.getElementById("dob").value = selectedCell.cells[2].textContent
+            document.getElementById("mail").value = selectedCell.cells[3].textContent
+            document.getElementById("gender").value = selectedCell.cells[4].textContent
+
+            editIdx = idx
+        }
+
+        const addRow = (name, age, dob, mail, gender) => {
+            const newRow = table.insertRow()
+
+            newRow.insertCell(0).textContent = name
+            newRow.insertCell(1).textContent = age
+            newRow.insertCell(2).textContent = dob
+            newRow.insertCell(3).textContent = mail
+            newRow.insertCell(4).textContent = gender
+
+            const actionCells = newRow.insertCell(5)
+
+
+
+            const deleteBtn = document.createElement("button")
+            // <button></button>
+
+            deleteBtn.textContent = "Delete"
+            // <button>Delete</button>
+
+            deleteBtn.onclick = () => deleteRow(newRow.rowIndex - 1)
+            // <button onclick="deleteRow()">Delete</button>
+
+            const editBtn = document.createElement("button")
+            // <button></button>
+
+            editBtn.textContent = "Edit"
+            // <button>Edit</button>
+
+            editBtn.onclick = () => editRow(newRow.rowIndex - 1)
+            // <button onclick="EditRow()">Edit</button>
+
+            actionCells.appendChild(editBtn)
+            actionCells.appendChild(deleteBtn)
+        }
+
+
+        const updateRow = (name, age, dob, mail, gender) => {
+            const editCell = table.rows[editIdx]
+
+            editCell.cells[0].textContent = name
+            editCell.cells[1].textContent = age
+            editCell.cells[2].textContent = dob
+            editCell.cells[3].textContent = mail
+            editCell.cells[4].textContent = gender
+
+            editIdx = null
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value
+            const age = document.getElementById("age").value
+            const dob = document.getElementById("dob").value
+            const mail = document.getElementById("mail").value
+            const gender = document.getElementById("gender").value
+
+            if (editIdx != null) {
+                updateRow(name, age, dob, mail, gender)
+            } else {
+                addRow(name, age, dob, mail, gender)
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- c = {
+    a: {
+        b: {
+
+        }
+    }
+}
+
+c.a.b -->
+
+
+<!-- <h1>Vijay</h1>
+
+<td>Vijay</td> -->
+
+
+<!-- <table>
+    <tbody>
+        <tr>
+            <td></td> - 0
+            <td></td> - 1
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<!-- [
+0,
+1,
+2,
+3,
+4,
+5
+] -->
+
+
+<!-- [1,2,3,4,5,6] -->
+
+<!-- <tr> - 0
+    th
+</tr>
+
+<tr> - 1
+    <td></td>
+    delete
+</tr> -->
+
+
+<!-- parent
+    child
+
+
+
+child -->
+
+
+
+<!-- a = b
+
+b = 2 -> edit
+
+
+documnet.gg(name).value = table.rows[2].textcontent
+
+table.rows[2].textcontent = vijay - 2 -> edit -->
