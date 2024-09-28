@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <button id="prev">PREV</button>
+
+        <h4 id="sliderValue">1</h4>
+
+        <button id="next">NEXT</button>
+    </section>
+
+
+    <script>
+        let currentValue = 1
+
+        let sliderValue = document.getElementById("sliderValue")
+
+        let prev = document.getElementById("prev")
+        let next = document.getElementById("next")
+
+        function updateSlider(value = currentValue) {
+            sliderValue.textContent = value
+        }
+
+        prev.addEventListener("click", () => {
+            if (currentValue > 1) {
+                currentValue--
+            } else {
+                currentValue = 3
+            }
+            updateSlider()
+        })
+
+        next.addEventListener("click", () => {
+            if (currentValue < 3) {
+                currentValue++
+            } else {
+                currentValue = 1
+            }
+            updateSlider()
+        })
+
+
+        updateSlider()
+    </script>
+</body>
+
+</html>
