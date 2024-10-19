@@ -1,0 +1,39 @@
+// REACT DOWNLOAD LIFECYCLE
+1. install
+2. open project directory
+3. start
+
+// REACT LIFECYCLE
+1. componentDidmount
+2. componentDidupdating
+3. componentWillunmount
+
+
+
+Components
+1. functional
+2. class
+
+
+class               function                           explanation
+
+constructors        usestate                           Initialize the states
+
+componentDidmount   useEffect(() => {},[])             Mounting to the component
+
+cDidUpdate          useEffect(() => {},[class])        updating based on depandency array
+
+cWillunmount        useEffect(() => {                  component unmounting from DOM
+
+
+                        //optional
+                        return () => {} //cleanup
+                    },[class])     
+
+
+
+
+value = undefined  -> component Mount
+value = "vijay"   -> componet unmount, componet Mount
+
+value = "anand"   -> componet unmount, componet Mount
