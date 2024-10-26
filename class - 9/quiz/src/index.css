@@ -1,13 +1,81 @@
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  /* border: 1px solid black; */
+
+  padding: 20px 120px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-input {
+  width: 120%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="text"] {
+  /* width: 100%; */
+  padding: 8px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.answer-button {
+  display: block;
+  margin: 8px 0;
+  padding: 8px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answer-button:hover {
+  background-color: #0056b3;
+}
+
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.incorrect {
+  background-color: #ff4b4b;
+  color: white;
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 50px;
 }
