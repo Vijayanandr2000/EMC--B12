@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index.js",
+    "start:db": "nodemon index.db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vijayanand Ravi",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongodb": "^6.10.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

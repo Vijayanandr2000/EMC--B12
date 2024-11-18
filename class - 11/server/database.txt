@@ -1,0 +1,56 @@
+Database
+1. SQL -> relational
+2. NoSQL -> Non - relational
+
+name | dept | dob |
+
+
+{
+    name: "vijay"
+    insta: "asdjasg"
+},
+{
+    name: "anand",
+    linkedin: "ksajhkdhjksah"
+},
+{
+    name: "kishore",
+    fb: "kjbsdjbsa"
+}
+
+Cluster  -> all
+
+ClgA -> insta -> Database -> database
+  ECE -> user -> collection -> Table
+    1. stude 1 -> vijay -> documents -> Rows
+    2. stude 2 -> anand
+    3. stude 3 -> alwin
+  EEE -> post
+    1. stude 1 -> post 1
+    2. stude 2 => post 2
+    3. stude 3 -> post 3
+  IT -> reel
+    1. stude 1
+    2. stude 2
+    3. stude 3
+
+ClgB -> insta -> Database -> database
+  ECE -> user -> collection -> Table
+    1. stude 1 -> vijay -> documents -> Rows
+    2. stude 2 -> anand
+    3. stude 3 -> alwin
+  EEE -> post
+    1. stude 1 -> post 1
+    2. stude 2 => post 2
+    3. stude 3 -> post 3
+  IT -> reel
+    1. stude 1
+    2. stude 2
+    3. stude 3
+
+DB Query's -> Cluster.database(ClgA).collections(EEE).find({id: 2})
+Cluster.database(ClgA).collections(EEE).insertOne( {} )
+
+    Passsword@123
+
+    6avQf6ACcveFtNbD
