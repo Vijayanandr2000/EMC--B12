@@ -7,7 +7,7 @@ const app = express();
 const PORT = 8080;
 
 const MONGO_URI =
-  "mongodb+srv://vijayanandr2000:6avQf6ACcveFtNbD@cluster0.m3aiq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://Anand:gksJxEx5Rh6agZJ0@cluster0.1axup.mongodb.net/";
 
 //middleware
 app.use(express.json());
@@ -37,6 +37,8 @@ const connectDatabase = async () => {
     // await client.close();
   }
 };
+
+connectDatabase().catch(console.dir);
 
 const findExistingUser = async (email) => {
   //Upsert -> Update + insert
@@ -171,7 +173,6 @@ app.patch("/user/:id", async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server started at port: ${PORT}`);
-  connectDatabase().catch(console.dir);
 });
 
 /**
