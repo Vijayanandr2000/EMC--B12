@@ -51,6 +51,10 @@ app.get("/", (_, res) => {
   res.send("API is wrking fine");
 });
 
+app.get("/vijay", (_, res) => {
+  res.send("vijay API is wrking fine");
+});
+
 app.post("/signup", async (req, res) => {
   try {
     const { email, password } = req.body;
