@@ -10,7 +10,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `http://localhost:8080/signup`;
+    const url = `https://login-app-u3q0.onrender.com/signup`;
 
     try {
       const response = await axios.post(url, user);

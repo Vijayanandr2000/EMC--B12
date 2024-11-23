@@ -10,7 +10,7 @@ const Login = ({ handleLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `http://localhost:8080/login?email=${user.email}&password=${user.password}`;
+    const url = `https://login-app-u3q0.onrender.com/login?email=${user.email}&password=${user.password}`;
 
     try {
       const response = await axios.get(url);
