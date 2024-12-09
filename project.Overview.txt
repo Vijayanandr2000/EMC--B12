@@ -7,4 +7,5 @@ User -> Store userinf
 Productus -> Products
 cart -> Cart info (userId, ProductId)
 Checkout -> Orders (user purched)
+
 Orders -> user purchased order (cartId)
